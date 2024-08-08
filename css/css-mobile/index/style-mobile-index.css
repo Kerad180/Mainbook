@@ -1,0 +1,32 @@
+#card {
+    width: 100%;
+    height: 100%;
+    border-radius: 0px;
+}
+
+#registerButton {
+    margin-top: 50px;
+}
+
+@media screen and (orientation: landscape) {
+    #logform {
+        display: -ms-grid;
+        display: grid;
+        -ms-grid-columns: 1fr 1fr;
+        grid-template-columns: 1fr 1fr;
+    }
+
+    input[data-window]  {
+        width: 200px;
+    }
+
+    #logButton {
+        padding: 8px; 
+        width: 130px;
+    }
+
+    #registerButton {
+        padding: 8px; 
+        margin-top: 30px;
+    }
+}

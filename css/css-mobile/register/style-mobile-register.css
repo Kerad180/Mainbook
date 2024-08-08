@@ -1,0 +1,73 @@
+#placeForCube {
+    display: none;
+}
+
+#registerContent {
+    -ms-grid-columns: 1fr 0fr;
+    grid-template-columns: 1fr 0fr;
+}
+
+#register {
+    width: 100%;
+    border-radius: 0px;
+}
+
+#registerForm {
+    margin-top: 10px;
+}
+
+.loginAndPassword {
+    margin-top: 10px;
+}
+
+#registerButton {
+    padding: 8px; 
+    margin-top: 5px;
+    width: 130px;
+}
+
+#returnButton {
+    padding: 8px; 
+    margin-top: 70px;
+    width: 130px;
+}
+
+#answer {
+    margin: 5px;
+    padding: 10px;
+}
+
+input[data-window] {
+    border: 1px solid #020709;
+    color: #020709;
+    border-radius: 5px;
+    opacity: 0.9;
+    font-size: 15px;
+    width: 250px;
+}
+
+@media screen and (orientation: landscape) {
+    #register {
+        display: -ms-grid;
+        display: grid;
+        -ms-grid-columns: 1fr 1fr;
+        grid-template-columns: 1fr 1fr;
+    }
+
+    #answer {
+        margin: 0px;
+        height: 90px;
+        margin-right: 10px;
+    }
+
+    #returnButton {
+        padding: 8px; 
+        margin-top: 57px;
+        width: 130px;
+        font-size: 15px;
+    }
+
+    input[data-window]  {
+        width: 200px;
+    }
+}

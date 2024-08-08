@@ -1,0 +1,52 @@
+#stageForCube {
+    width: 250px;
+    height: 250px;
+}
+
+.wall {
+    font-size: 100px;
+    line-height: 250px;
+}
+
+.front {
+    -webkit-transform: translateZ(125px);
+            transform: translateZ(125px);
+}
+
+.back {
+    -webkit-transform: rotateX(180deg) translateZ(125px);
+            transform: rotateX(180deg) translateZ(125px);
+}
+
+.left {
+    -webkit-transform: rotateY(-90deg) translateZ(125px);
+            transform: rotateY(-90deg) translateZ(125px);
+}
+
+.right {
+    -webkit-transform: rotateY(90deg) translateZ(125px);
+            transform: rotateY(90deg) translateZ(125px);
+}
+
+.top {
+    -webkit-transform: rotateX(90deg) translateZ(125px);
+            transform: rotateX(90deg) translateZ(125px);
+}
+
+.bottom {
+    -webkit-transform: rotateX(-90deg) translateZ(125px);
+            transform: rotateX(-90deg) translateZ(125px);
+}
+
+#underForm {
+    margin: 10px;
+}
+
+#answer {
+    margin: 10px;
+}
+
+#returnButton {
+    margin: 0px;
+    margin-top: 30px;
+}

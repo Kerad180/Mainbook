@@ -1,0 +1,15 @@
+#something {
+    display: none;
+}
+
+#news {
+    max-width: 800px;
+}
+
+#news {
+    display: block;
+}
+
+#contacts{
+    display: block;
+}

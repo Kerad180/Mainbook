@@ -1,0 +1,91 @@
+#top {
+    padding: 15px;
+}
+
+#top div h2 {
+    font-size: 30px;
+}
+
+#returnButton {
+    padding: 10px; 
+    font-size: 15px;
+}
+
+#container {
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+}
+
+#contacts {
+    display: none;
+}
+
+#contacts h2 {
+    font-size: 30px;
+    margin-top: 10px;
+}
+
+#contacts ul {
+    height: 50vh;
+}
+
+#news {
+    width: 590px;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+}
+
+#something {
+    display: none;
+}
+
+#contactButton {
+    display: block;
+}
+
+#chatWindows {
+    display: block;
+    position: fixed;
+    right: 50%;
+    bottom: 50%;
+    -webkit-transform: translateY(50%);
+        -ms-transform: translateY(50%);
+            transform: translateY(50%);
+    z-index: 2000;
+    margin-left: 50%;
+}
+
+.chatWindow {
+    display: inline-block;
+    width: 550px;
+    height: 700px;
+    z-index: 2000;
+    left: 50%;
+}
+
+.messages {
+    height: 600px;
+}
+
+@media screen and (orientation: landscape) {
+    #news {
+        width: 667px;
+    }
+
+    .chatWindow {
+        height: 325px;
+        width:550px;
+    }
+
+    .messages {
+        height: 225px;
+    }
+}

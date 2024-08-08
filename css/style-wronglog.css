@@ -1,0 +1,73 @@
+* {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    line-height: 1.4em;
+    vertical-align: baseline;
+    text-decoration: none;
+    outline: 0;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+#wronglogContainer {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+	-webkit-box-pack: center;
+	    -ms-flex-pack: center;
+	        justify-content: center;
+	-webkit-box-align: center;
+	    -ms-flex-align: center;
+	        align-items: center;
+    background-color: #F7FBFC;
+    height: 100%;
+    position: absolute; 
+    top: 0; 
+    left: 0;
+    bottom: 0; 
+    right: 0; 
+}
+
+#card {
+    position: absolute;
+    width: 400px;
+    height: 400px;
+    -webkit-box-shadow: 2px 9px 13px -11px rgba(66, 68, 90, 0.8);
+            box-shadow: 2px 9px 13px -11px rgba(66, 68, 90, 0.8);
+    border-radius: 10px;
+    background-color: #7AB9D1;
+    text-align: center;
+}
+
+#card div p {
+    color: #020709;
+    font-size: 35px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+#returnButton {
+    background-color: #020709;
+    color:  #F7FBFC;
+    margin-top: 70px;
+    padding: 25px; 
+    font-size: 15px;
+    border-radius: 20px;
+    opacity: 0.9;
+    -webkit-box-shadow: 2px 9px 13px -11px rgba(0, 0, 0, 0.8);
+            box-shadow: 2px 9px 13px -11px rgba(0, 0, 0, 0.8);
+    width: 150px;
+}
+
+#returnButton:hover {
+    opacity: 1;
+    cursor: pointer;
+}
+
+#returnButton:active {
+    position: relative;
+    top: 0.7px;
+    -webkit-box-shadow: 2px 7px 11px -11px rgb(0, 0, 0, 1);
+            box-shadow: 2px 7px 11px -11px rgb(0, 0, 0, 1);
+}

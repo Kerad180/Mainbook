@@ -1,0 +1,39 @@
+#stageForCube {
+    width: 300px;
+    height: 300px;
+}
+
+.wall {
+    font-size: 150px;
+    line-height: 300px;
+}
+
+.front {
+    -webkit-transform: translateZ(150px);
+            transform: translateZ(150px);
+}
+
+.back {
+    -webkit-transform: rotateX(180deg) translateZ(150px);
+            transform: rotateX(180deg) translateZ(150px);
+}
+
+.left {
+    -webkit-transform: rotateY(-90deg) translateZ(150px);
+            transform: rotateY(-90deg) translateZ(150px);
+}
+
+.right {
+    -webkit-transform: rotateY(90deg) translateZ(150px);
+            transform: rotateY(90deg) translateZ(150px);
+}
+
+.top {
+    -webkit-transform: rotateX(90deg) translateZ(150px);
+            transform: rotateX(90deg) translateZ(150px);
+}
+
+.bottom {
+    -webkit-transform: rotateX(-90deg) translateZ(150px);
+            transform: rotateX(-90deg) translateZ(150px);
+}
