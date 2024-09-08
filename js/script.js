@@ -9,15 +9,15 @@ $(function() {
 
 	newsInit();
 
-	// $("#newsShare").submit(function(e) {
-	// 	$.post("/php/get-news.php", {
-	// 		"text": $("#newsText").val(),
-	// 		"isToAdd": true
-	// 	})
-	// 	e.preventDefault();
-	// 	$("#newsText").val('');
-	// 	newsInit();
-	// });
+	$("#newsShare").submit(function(e) {
+		$.post("/php/get-news.php", {
+			"text": $("#newsText").val(),
+			"isToAdd": true
+		})
+		e.preventDefault();
+		$("#newsText").val('');
+		newsInit();
+	});
 
 	
 

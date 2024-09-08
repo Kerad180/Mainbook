@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Aug 07, 2024 at 12:26 PM
+-- Generation Time: Wrz 08, 2024 at 02:39 PM
 -- Wersja serwera: 10.4.28-MariaDB
 -- Wersja PHP: 8.2.4
 
@@ -29,9 +29,9 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `messages` (
   `id` int(10) NOT NULL,
-  `id_user_from` int(10) NOT NULL,
-  `id_user_to` int(10) NOT NULL,
-  `message` text NOT NULL
+  `id_user_from` int(10) DEFAULT NULL,
+  `id_user_to` int(10) DEFAULT NULL,
+  `message` text DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin;
 
 --
@@ -50,8 +50,8 @@ INSERT INTO `messages` (`id`, `id_user_from`, `id_user_to`, `message`) VALUES
 
 CREATE TABLE `news` (
   `id` int(10) NOT NULL,
-  `id_user` int(10) NOT NULL,
-  `post` text NOT NULL
+  `id_user` int(10) DEFAULT NULL,
+  `post` text DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin;
 
 --
@@ -69,8 +69,8 @@ INSERT INTO `news` (`id`, `id_user`, `post`) VALUES
 
 CREATE TABLE `users` (
   `id` int(10) NOT NULL,
-  `login` varchar(15) NOT NULL,
-  `password` varchar(60) NOT NULL
+  `login` varchar(15) DEFAULT NULL,
+  `password` varchar(60) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin;
 
 --
@@ -110,6 +110,18 @@ ALTER TABLE `users`
 --
 -- AUTO_INCREMENT for dumped tables
 --
+
+--
+-- AUTO_INCREMENT for table `messages`
+--
+ALTER TABLE `messages`
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- AUTO_INCREMENT for table `news`
+--
+ALTER TABLE `news`
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `users`
