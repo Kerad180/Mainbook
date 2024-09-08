@@ -7,11 +7,13 @@
 
     $isToAdd = false;
 
-    $newNew = trim($_POST['text']);
+    $newNew = trim($_POST["text"]);
     $userId = $_SESSION['id'];
+
+
     $isToAdd = $_POST['isToAdd'];
 
-        if($isToAdd && $newNew != "") {
+        if($isToAdd) {
             $queryAddNew = "INSERT INTO news (id_user, post)
                 VALUES ($userId, \"$newNew\")";
             mysqli_query($dbc, $queryAddNew);

@@ -29,6 +29,7 @@
                     <div id='line'></div>
                     <ul>
                     <?php
+                            echo($_SESSION['login'])." ".$_SESSION['id'];
                             $queryContacts = "SELECT id, login FROM users WHERE login !='".$_SESSION['login']."' ORDER BY login";
                             $resultsContacts = mysqli_query($dbc, $queryContacts);
                             while ($row = @mysqli_fetch_assoc($resultsContacts)) {

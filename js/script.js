@@ -9,15 +9,17 @@ $(function() {
 
 	newsInit();
 
-	$("#newsShare").submit(function(e) {
-		$.post("php/get-news.php", {
-			"text": $("#newsText").val(),
-			"isToAdd": true
-		})
-		e.preventDefault();
-		$("#newsText").val('');
-		newsInit();
-	});
+	// $("#newsShare").submit(function(e) {
+	// 	$.post("/php/get-news.php", {
+	// 		"text": $("#newsText").val(),
+	// 		"isToAdd": true
+	// 	})
+	// 	e.preventDefault();
+	// 	$("#newsText").val('');
+	// 	newsInit();
+	// });
+
+	
 
 	$("article div").truncate();
 
@@ -64,7 +66,7 @@ function addUsers(tableFromAdd) {
 }
 
 function newsInit() {
-	$.get("php/get-news.php", function(res) {
+	$.get("../php/get-news.php", function(res) {
 		$("#news ul").html(res),
 			$("#news ul li div").truncate();
 	})
