@@ -1,5 +1,7 @@
+import initUsers from "./utils/init-users.js";
+
 $(function() {
-	let users = addUsers(tableInit("php/get-users.php"));
+	const users = initUsers();
 
 	$("*").attr("draggable", false);
 
@@ -39,31 +41,7 @@ class user {
 	}
 }
 
-function tableInit(url) {
-	let table = [];
-	let tempUser;
 
-	$.ajax({
-		type: "GET",
-		url: url,
-		async: false,
-
-		success: function(data) {
-			tempUser = data;
-			table = tempUser.split(",");
-		}
-	});
-
-	return table;
-}
-
-function addUsers(tableFromAdd) {
-	let tableToAdd = [];
-	for (let i = 0; i <= tableFromAdd.length - 2; i = i + 2) {
-		tableToAdd.push(new user(parseInt(tableFromAdd[i]), tableFromAdd[i + 1]));
-	}
-	return tableToAdd;
-}
 
 function newsInit() {
 	$.get("../php/get-news.php", function(res) {
@@ -115,6 +93,7 @@ function replaceShowAndHide(button, contentOne, contentTwo) {
 
 function addChat(self, users) {
 	let tempUser;
+	let messageContent;
 
 	users.forEach(u => (u.id == $(self).attr('id')) ? tempUser = u : 0);
 
@@ -124,9 +103,9 @@ function addChat(self, users) {
 			"<img class='x' src='pictures/close-line.png'alt='x'></div></div>" +
 			"<form class='chatForm'><div class='messages' data-userId='" + tempUser.id + "'></div><div class='textChat'><div><textarea></textarea></div><div><input class='sendButton' type='submit' value='Send'></div></div></form></div>");
 
-		$messageContent = $(".chatWindow[data-userId ='" + tempUser.id + "'] div.messages");
+		messageContent = $(".chatWindow[data-userId ='" + tempUser.id + "'] div.messages");
 
-		messagesInit($messageContent, tempUser.id);
+		messagesInit(messageContent, tempUser.id);
 		$(".messages").animate({
 			scrollTop: 1e6
 		})
@@ -141,11 +120,11 @@ function addChat(self, users) {
 				"isToAdd": true
 			})
 			$(".textChat textarea").val('');
-			$messageContent.animate({
+			messageContent.animate({
 				scrollTop: $(".messages")[0].scrollHeight
 			}, 1000)
 			e.preventDefault();
-			messagesInit($messageContent, tempUser.id);
+			messagesInit(messageContent, tempUser.id);
 		});
 
 	} else {
