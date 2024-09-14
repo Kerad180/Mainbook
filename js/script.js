@@ -1,4 +1,5 @@
 import initUsers from "./utils/init-users.js";
+import newsInit from "./utils/init-news.js";
 
 $(function() {
 	const users = initUsers();
@@ -29,26 +30,6 @@ $(function() {
 });
 
 
-class user {
-	id;
-	login;
-	isChatCreated;
-
-	constructor(id, login) {
-		this.id = id;
-		this.login = login;
-		this.isChatCreated = false;
-	}
-}
-
-
-
-function newsInit() {
-	$.get("../php/get-news.php", function(res) {
-		$("#news ul").html(res),
-			$("#news ul li div").truncate();
-	})
-}
 
 function messagesInit(messageContent, idTo) {
 
