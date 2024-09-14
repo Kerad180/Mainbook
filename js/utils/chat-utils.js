@@ -78,7 +78,6 @@ export function replaceShowAndHide(button, contentOne, contentTwo) {
 	}
 }
 
-
 function messagesInit(messageContent, idTo) {
 
 	$.post("php/get-messages.php", {
