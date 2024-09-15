@@ -6,25 +6,25 @@ import trancate from "./utils/trancate.js";
 $(function() {
 	const users = initUsers();
 
-	$("*").attr("draggable", false);
+	$(`*`).attr(`draggable`, false);
 
-	$("#contacts ul li").click(function() {
+	$(`#contacts ul li`).click(function() {
 		addChat(this, users);
 	});
 
 	newsInit();
 
-	$("#newsShare").submit(function(e) {
-		$.post("/php/get-news.php", {
-			"text": $("#newsText").val(),
-			"isToAdd": true
+	$(`#newsShare`).submit((e) => {
+		$.post(`/php/get-news.php`, {
+			'text': $(`#newsText`).val(),
+			'isToAdd': true
 		})
 		e.preventDefault();
-		$("#newsText").val('');
+		$(`#newsText`).val(``);
 		newsInit();
 	});
 
-	$("article div").truncate();
+	$(`article div`).truncate();
 
-	replaceShowAndHide($("#contactButton"), $("#contacts"), $("#news"));
+	replaceShowAndHide($(`#contactButton`), $(`#contacts`), $(`#news`));
 });

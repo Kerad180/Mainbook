@@ -1,7 +1,7 @@
 import user from "../user.js";
 
 export default function initUsers() {
-    return addUsers(tableInit("../php/get-users.php"));
+    return addUsers(tableInit(`../php/get-users.php`));
 }
 
 function addUsers(tableFromAdd) {
@@ -17,13 +17,13 @@ function tableInit(url) {
 	let tempUser;
 
 	$.ajax({
-		type: "GET",
+		type: 'GET',
 		url: url,
 		async: false,
 
 		success: function(data) {
 			tempUser = data;
-			table = tempUser.split(",");
+			table = tempUser.split(`,`);
 		}
 	});
 
