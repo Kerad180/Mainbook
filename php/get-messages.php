@@ -13,12 +13,17 @@
     $isToAdd = $_POST['isToAdd'];
     $idUserToSend = $_POST["idUserToSend"];
 
+    $jest = "NIEMA";
+
     if($isToAdd && $message != "") {
         $queryAddMessage = "INSERT INTO messages (id_user_from, id_user_to, message)
             VALUES ($userIdFrom, $idUserToSend, \"$message\")";
         mysqli_query($dbc, $queryAddMessage);
-        $isToAdd = false;
     }
+
+    $isToAdd = false;
+
+    echo($jest);
 
     $queryNews = "SELECT id_user_from, message FROM messages 
         WHERE (id_user_from = $userIdFrom OR id_user_from = $userIdTo) AND (id_user_to = $userIdFrom OR id_user_to = $userIdTo)";

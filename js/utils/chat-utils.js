@@ -11,22 +11,31 @@ export function addChat(self, users) {
 		messageContent = $(`.chatWindow[data-userId ='${tempUser.id}'] div.messages`);
 
 		messagesInit(messageContent, tempUser.id);
-		$(`.messages`).animate({
+		messageContent.animate({
 			scrollTop: 1e6
 		})
 
 		$(`.chatForm`).submit(function(e) {
+			let userChat;
+			let chatUserId = $(this.parentNode).attr(`data-userId`)
+			users.forEach(u => (u.id == chatUserId ? userChat = u : 0));
+			let messageContentChat = $(`.chatWindow[data-userId ='${chatUserId}'] div.messages`);
+
 			$.post(`php/get-messages.php`, {
-				'text': $(`.textChat textarea`).val(),
-				'idUserToSend': tempUser.id,
+				'text': $(this[0]).val(),
+				'idUserToSend': userChat.id,
 				'isToAdd': true
 			})
-			$(`.textChat textarea`).val(``);
-			messageContent.animate({
-				scrollTop: $(`.messages`)[0].scrollHeight
-			}, 1000)
+
+			$(this[0]).val(``);
+
 			e.preventDefault();
-			messagesInit(messageContent, tempUser.id);
+
+			messagesInit(messageContentChat, userChat.id);
+
+			messageContentChat.animate({
+				scrollTop: 1e6
+			})
 		});
 
 	} else {
@@ -35,10 +44,10 @@ export function addChat(self, users) {
 	}
 
 	$(`.chatWindow .x`).click(function() {
-		let user;
+		let userX;
 		let idTempUser = $(this.parentNode.parentNode.parentNode).attr(`data-userId`);
-		users.forEach(u => (u.id == idTempUser ? user = u : 0));
-		user.isChatCreated = false;
+		users.forEach(u => (u.id == idTempUser ? userX = u : 0));
+		userX.isChatCreated = false;
 		$(this.parentNode.parentNode.parentNode).remove();
 	});
 }
