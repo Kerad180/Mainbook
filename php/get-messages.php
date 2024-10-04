@@ -23,8 +23,6 @@
 
     $isToAdd = false;
 
-    echo($jest);
-
     $queryNews = "SELECT id_user_from, message FROM messages 
         WHERE (id_user_from = $userIdFrom OR id_user_from = $userIdTo) AND (id_user_to = $userIdFrom OR id_user_to = $userIdTo)";
     

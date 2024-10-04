@@ -24,30 +24,6 @@ $(function() {
 		newsInit();
 	});
 
-	// users.forEach((user) => {	
-	// 	$(`.chatForm ${user.id}`).submit(function(e) {
-	// 		// console.log(this.parentNode.attributes[1].value)
-
-	// 		console.log(this)
-
-	// 		// let chatUserId = this.parentNode.attributes[1].value;
-
-	// 		$.post(`php/get-messages.php`, {
-	// 			'text': $(`.textChat textarea`).val(),
-	// 			'idUserToSend': user.id,
-	// 			'isToAdd': true
-	// 		})
-
-	// 		$(`.textChat textarea`).val(``);
-
-	// 		messageContent.animate({
-	// 			scrollTop: $(`.messages`)[0].scrollHeight
-	// 		}, 1000)
-	// 		e.preventDefault();
-	// 		messagesInit(messageContent, user.id);
-	// 	});
-	// })
-
 	$(`article div`).truncate();
 
 	replaceShowAndHide($(`#contactButton`), $(`#contacts`), $(`#news`));
