@@ -1,8 +1,13 @@
 It is a social networking site similar to Facebook. You can share posts and write to other users.
 
-Webiste wrote using jQuery, PHP and SQL database.
+Webiste wrote using jQuery, PHP and SQL database. 
 
-You can import database from file mainbook.sql
+The "password hash" function was used to encode the password with the "PASSWORD_DEFAULT" value set.
+
+The connection to the database is in the file "main-page.php" and "register-page.php".
+
+You can import database from file "mainbook.sql"
+
 
 Default users:
 
